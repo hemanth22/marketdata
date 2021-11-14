@@ -1,0 +1,38 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Python application
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
+        python3 -m pip3 install --upgrade pip
+        pip3 install requests bselib bsedata nsetools requests setuptools urllib3 Jinja2
+        pip --version
+        python --version
+        python3 --version
+
+    - name: Get BSE data
+      run: python3 get_slist.py
+
+    - name: Get BSE data with bse lib
+      run: python3 get_sslist.py
+
+    - name: Get NSE data
+      run: python3 nget_slit.py
