@@ -19,11 +19,11 @@ jobs:
     - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
-        python-version: 3.9
+        python-version: 3.6
     - name: Install dependencies
       run: |
-        python3 -m pip3 install --upgrade pip
-        pip3 install requests bselib bsedata nsetools requests setuptools urllib3 Jinja2
+        easy_install-3.6 pip
+        pip install requests bselib bsedata nsetools requests setuptools urllib3 Jinja2
         pip --version
         python --version
         python3 --version
