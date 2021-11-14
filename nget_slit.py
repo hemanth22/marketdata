@@ -13,3 +13,13 @@ for code in codelist:
     print('Price:',quote["lastPrice"])
     print('Previous Close Price:',quote["previousClose"])
     print('Corporate Action purpose:',quote["purpose"])
+
+fno_helper = nse.get_fno_lot_sizes()
+print("========= GET FNO Lot Size ============")
+pprint(fno_helper)
+print("========= Top Gainers ============")
+top_gainers = nse.get_top_gainers()
+pprint(top_gainers)
+print("========= Top Losers ============")
+top_losers = nse.get_top_losers()
+pprint(top_losers)
