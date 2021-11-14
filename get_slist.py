@@ -14,3 +14,6 @@ for code in codelist:
     print('Face Value',quote["faceValue"])
     print('industry',quote["industry"])
     print('Previous Close stock price:',quote["previousClose"])
+    print('Market Cap Full:',quote["marketCapFull"])
+    print('Market Cap Free Float:',quote["marketCapFreeFloat"])
+    print('Total Traded Value:',quote["totalTradedValue"])
