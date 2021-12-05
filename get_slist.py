@@ -3,7 +3,7 @@ import requests
 #b = BSE()
 #print(b)
 b = BSE(update_codes = True)
-codelist=["532698","500477"]
+codelist=["532698","500477","543396"]
 #q = b.getQuote('532698')
 for code in codelist:
     quote = b.getQuote(code)
